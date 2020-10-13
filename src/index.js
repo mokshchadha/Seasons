@@ -13,9 +13,6 @@ class App extends React.Component {
     );
   }
 
-  componentDidUpdate() {
-    console.log("it rendered again ");
-  }
   render() {
     if (this.state.lat) return <SeasonDisplay lat={this.state.lat} />;
     else return <div>Loading</div>;
