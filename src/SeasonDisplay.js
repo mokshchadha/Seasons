@@ -8,14 +8,21 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = ({ lat }) => {
   const season = getSeason(lat, new Date().getMonth());
-
-  return season === "winter" ? (
+  const obj =
+    season === "winter"
+      ? {
+          text: "Burr its chilly",
+          icon: "snowflake",
+        }
+      : {
+          text: "Let's hit the beach",
+          icon: "sun",
+        };
+  return (
     <div>
-      <h1>Burr its chilly</h1>
-    </div>
-  ) : (
-    <div>
-      <h1>Let's Hit the beach</h1>
+      <i className={`${obj.icon} icon`} />
+      <h1>{obj.text}</h1>
+      <i className={`${obj.icon} icon`} />
     </div>
   );
 };
